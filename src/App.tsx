@@ -17,9 +17,9 @@ function TerminalHeader({ title = 'terminal' }: { title?: string }) {
 
 function StatCard({ label, value }: { label: string; value: string }) {
   return (
-    <div className="terminal-card p-5">
+    <div className="terminal-card p-4 sm:p-5">
       <div className="font-mono text-xs text-muted mb-2">{label}</div>
-      <div className="font-mono text-2xl text-primary mb-1">{value}</div>
+      <div className="font-mono text-xl sm:text-2xl text-primary mb-1">{value}</div>
     </div>
   );
 }
@@ -108,8 +108,10 @@ function App() {
 
   return (
     <div ref={mainRef} className="relative bg-neutral-950 min-h-screen grid-bg">
-      <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4 flex justify-between items-center bg-neutral-950/90 backdrop-blur-sm border-b border-neutral-800">
-        <div className="font-mono text-sm text-secondary">cp.</div>
+      <nav className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 py-4 flex justify-between items-center bg-neutral-950/90 backdrop-blur-sm border-b border-neutral-800">
+        <div className="font-mono text-sm text-secondary">
+          Sushanta<span className="hidden sm:inline"> Sahu</span>
+        </div>
         <div className="hidden md:flex gap-8">
           {[
             { label: 'stats', id: 'leetcode' },
@@ -131,7 +133,7 @@ function App() {
         </div>
       </nav>
 
-      <section className="min-h-screen flex items-center justify-center px-6 pt-20">
+      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 pt-20">
         <div className="max-w-3xl text-center">
           <h1 className={`hero-title font-mono text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-primary mb-6 tracking-tight ${loaded ? '' : 'opacity-0'}`}>
             Competitive
@@ -154,15 +156,15 @@ function App() {
       </section>
 
       <section id="leetcode" className="leetcode-section section-pinned">
-        <div className="w-full max-w-5xl px-6">
+        <div className="w-full max-w-5xl p-4 sm:p-6">
           <div className="reveal mb-8">
             <span className="font-mono text-xs text-muted">01</span>
-            <h2 className="font-mono text-2xl md:text-3xl text-primary mt-2">LeetCode</h2>
+            <h2 className="font-mono text-xl sm:text-2xl md:text-3xl text-primary mt-2">LeetCode</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="reveal terminal-card">
               <TerminalHeader title="leetcode stats" />
-              <div className="p-6">
+              <div className="p-4 sm:p-6">
                 <div className="stat-number font-mono text-6xl md:text-7xl text-primary mb-2">66</div>
                 <div className="font-mono text-sm text-muted mb-8">problems solved</div>
                 <div className="space-y-4">
@@ -200,39 +202,39 @@ function App() {
       </section>
 
       <section className="codeforces-section section-pinned">
-        <div className="w-full max-w-5xl px-6">
+        <div className="w-full max-w-5xl px-4 sm:px-6">
           <div className="reveal mb-8">
             <span className="font-mono text-xs text-muted">02</span>
-            <h2 className="font-mono text-2xl md:text-3xl text-primary mt-2">Codeforces</h2>
+            <h2 className="font-mono text-xl sm:text-2xl md:text-3xl text-primary mt-2">Codeforces</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="reveal md:col-span-2 terminal-card">
               <TerminalHeader title="codeforces rating" />
-              <div className="p-6">
-                <div className="stat-number font-mono text-7xl md:text-8xl text-primary mb-4">(˵ ¬ᴗ¬˵)</div>
-                <div className="inline-block px-3 py-1 border border-gray-700 rounded">
-                  <span className="font-mono text-sm text-secondary">Wannabe Expert T_T </span>
+              <div className="p-4 sm:p-6">
+                <div className="stat-number font-mono text-4xl sm:text-5xl md:text-7xl text-primary mb-4">Brewing... ☕</div>
+                <div className="inline-block px-3 py-1 border border-slate-700 rounded">
+                  <span className="font-mono text-sm text-secondary">Aspiring Expert</span>
                 </div>
               </div>
             </div>
             <div className="reveal space-y-4">
-              <StatCard label="Contests" value="(－_－) zzZ" />
-              <StatCard label="Max Rating" value="( ؕؔʘ̥̥̥̥ ه ؔؕʘ̥̥̥̥ )?" />
-              <StatCard label="Percentile" value="˶ᵔ ᵕ ᵔ˶" />
+              <StatCard label="Contests" value="Yet to conquer..." />
+              <StatCard label="Max Rating" value="On the rise..." />
+              <StatCard label="Percentile" value="Calibrating..." />
             </div>
           </div>
         </div>
       </section>
 
       <section id="skills" className="skills-section section-pinned">
-        <div className="w-full max-w-4xl px-6">
+        <div className="w-full max-w-4xl px-4 sm:px-6">
           <div className="reveal mb-8">
             <span className="font-mono text-xs text-muted">03</span>
-            <h2 className="font-mono text-2xl md:text-3xl text-primary mt-2">Skills</h2>
+            <h2 className="font-mono text-xl sm:text-2xl md:text-3xl text-primary mt-2">Skills</h2>
           </div>
           <div className="reveal terminal-card">
             <TerminalHeader title="languages & tools" />
-            <div className="p-6 md:p-8">
+            <div className="p-4 sm:p-6 md:p-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-2">
                 <SkillBar name="C++" level="Intermediate" percent={70} />
                 <SkillBar name="Python" level="Intermediate" percent={75} />
@@ -249,10 +251,10 @@ function App() {
       </section>
 
       <section id="projects" className="projects-section section-pinned">
-        <div className="w-full max-w-5xl px-6">
+        <div className="w-full max-w-5xl px-4 sm:px-6">
           <div className="reveal mb-8">
             <span className="font-mono text-xs text-muted">04</span>
-            <h2 className="font-mono text-2xl md:text-3xl text-primary mt-2">Projects</h2>
+            <h2 className="font-mono text-xl sm:text-2xl md:text-3xl text-primary mt-2">Projects</h2>
           </div>
           <div className="space-y-4">
             {[
@@ -260,8 +262,8 @@ function App() {
               { name: 'Contest CLI', desc: 'Terminal helper for Codeforces and LeetCode. Fetch problems, track progress, analyze performance.', tech: ['Python', 'Click', 'REST API'], lines: '1,234' },
               { name: 'Pexels Web Service & DevOps Pipeline', desc: 'Developed and deployed a scalable web service using Go with Docker and Kubernetes on GCP. Built CI/CD pipeline and auto-scaling system, reducing deployment time by 40%.', tech: ['Go', 'Docker', 'Kubernetes', 'GCP', 'CI/CD'], lines: '275' }
             ].map((project, i) => (
-              <div key={i} className="reveal terminal-card hover:border-gray-700 transition-colors">
-                <div className="p-6">
+              <div key={i} className="reveal terminal-card hover:border-slate-700 hover:scale-[1.01] transition-colors">
+                <div className="p-4 sm:p-6">
                   <div className="flex items-center gap-3 mb-2">
                     <h3 className="font-mono text-lg text-primary">{project.name}</h3>
                     <span className="font-mono text-xs text-muted">{project.lines} lines</span>
@@ -280,13 +282,13 @@ function App() {
       </section>
 
       <section className="approach-section section-pinned">
-        <div className="w-full max-w-3xl px-6">
+        <div className="w-full max-w-3xl px-4 sm:px-6">
           <div className="reveal mb-8">
             <span className="font-mono text-xs text-muted">05</span>
-            <h2 className="font-mono text-2xl md:text-3xl text-primary mt-2">Approach</h2>
+            <h2 className="font-mono text-xl sm:text-2xl md:text-3xl text-primary mt-2">Approach</h2>
           </div>
           <div className="reveal">
-            <p className="text-2xl md:text-3xl text-primary leading-relaxed mb-8">
+            <p className="text-xl sm:text-2xl md:text-3xl text-primary leading-relaxed mb-8">
               I build systems that don't break under pressure.
             </p>
             <div className="code-block mb-8">
@@ -302,17 +304,17 @@ function App() {
       </section>
 
       <section id="contact" className="contact-section section-pinned">
-        <div className="w-full max-w-3xl px-6">
+        <div className="w-full max-w-3xl px-4 sm:px-6">
           <div className="reveal mb-8">
             <span className="font-mono text-xs text-muted">06</span>
-            <h2 className="font-mono text-2xl md:text-3xl text-primary mt-2">Contact</h2>
+            <h2 className="font-mono text-xl sm:text-2xl md:text-3xl text-primary mt-2">Contact</h2>
           </div>
           <div className="reveal">
             <p className="text-secondary mb-8 leading-relaxed">
               Open to software engineering roles, freelance systems work, and interesting collaborations.
             </p>
             <div className="terminal-card mb-8">
-              <div className="p-6">
+              <div className="p-4 sm:p-6">
                 <div className="flex items-center gap-4 mb-6">
                   <span className="font-mono text-sm text-muted">Email</span>
                   <a 
@@ -324,7 +326,7 @@ function App() {
                     sushantasahu175@gmail.com
                   </a>
                 </div>
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-3 justify-center sm:justify-start">
                   {[
                     {
                       name: 'GitHub',
@@ -348,7 +350,7 @@ function App() {
                       href={social.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="font-mono text-xs px-3 py-2 border border-slate-700 text-muted hover:text-secondary hover:border-slate-500 transition transform hover:scale-105"
+                      className="font-mono text-xs px-4 py-3 border border-slate-700 text-muted hover:text-secondary hover:border-slate-500 transition transform hover:scale-105"
                     >
                       {social.name}
                     </a>
