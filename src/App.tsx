@@ -165,7 +165,7 @@ function App() {
             <div className="reveal terminal-card">
               <TerminalHeader title="leetcode stats" />
               <div className="p-4 sm:p-6">
-                <div className="stat-number font-mono text-6xl md:text-7xl text-primary mb-2">66</div>
+                <div className="stat-number font-mono text-6xl md:text-7xl text-primary mb-2">67</div>
                 <div className="font-mono text-sm text-muted mb-8">problems solved</div>
                 <div className="space-y-4">
                   <div>
@@ -185,7 +185,7 @@ function App() {
                   <div>
                     <div className="flex justify-between mb-1">
                       <span className="font-mono text-xs text-secondary">Hard</span>
-                      <span className="font-mono text-xs text-muted">5</span>
+                      <span className="font-mono text-xs text-muted">6</span>
                     </div>
                     <div className="progress-bar"><div className="progress-fill" style={{ width: '13%' }} /></div>
                   </div>
